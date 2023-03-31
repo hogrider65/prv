@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multiple Button Sounds Example</title>
+    <style>
+      .sound-button {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #212121;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px;
+        cursor: pointer;
+      }
+      /* Adjust button size for small screens */
+@media (max-width: 600px) {
+  .sound-button {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 5px;
+  }
+}
+
+/* Adjust button layout for medium screens */
+@media (min-width: 600px) and (max-width: 900px) {
+  .sound-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 8px;
+  }
+}
+
+/* Adjust button layout for large screens */
+@media (min-width: 900px) {
+  .sound-button {
+    font-size: 18px;
+    padding: 12px 24px;
+    margin: 10px;
+  }
+}
+    </style>
+    <script>
+      const audioSources = [
+      "https://www.myinstants.com/media/sounds/goofy-ahh-dad.mp3",
+        "https://www.myinstants.com/media/sounds/homer-simpson-woohoo.mp3",
+        "https://www.myinstants.com/media/sounds/bruh-button.mp3",
+        "https://www.myinstants.com/media/sounds/cena.mp3",
+        "https://www.myinstants.com/media/sounds/john-cena-you-cant-see-me.mp3",
+        "https://www.myinstants.com/media/sounds/this-is-sparta.mp3",
+        "https://www.myinstants.com/media/sounds/spongebob-timecards-one-epic-moment-later.mp3",
+        "https://www.myinstants.com/media/sounds/lets-get-ready-to-rumble-dramatic.mp3",
+        "https://www.myinstants.com/media/sounds/record-scratch.mp3",
+        "https://www.myinstants.com/media/sounds/oh-hell-no-1.mp3",
+        "https://www.myinstants.com/media/sounds/fbi-open-up-sfx-sound-effect_EBr0Zao.mp3",
+        "https://www.myinstants.com/media/sounds/mamma-mia-1.mp3",
+        "https://www.myinstants.com/media/sounds/simpsons-nelson-haha.mp3",
+        "https://www.myinstants.com/media/sounds/darude-sandstorm.mp3",
+        "https://www.myinstants.com/media/sounds/321-fight-austin-powers-sound-effect.mp3",
+        "https://www.myinstants.com/media/sounds/the-price-is-right-losing-horn.mp3",
+        "https://www.myinstants.com/media/sounds/baby-laughing.mp3",
+        "https://www.myinstants.com/media/sounds/im-batman.mp3",
+        "https://www.myinstants.com/media/sounds/whatsapp-whistle.mp3",
+        "https://www.myinstants.com/media/sounds/dramatic-chipmunk.mp3",
+        "https://www.myinstants.com/media/sounds/you-what-the-fuck_oUIWYky.mp3",
+        "https://www.myinstants.com/media/sounds/looney-tunes-end-theme.mp3",
+        "https://www.myinstants.com/media/sounds/morning-alarm-clock.mp3",
+        "https://www.myinstants.com/media/sounds/omae-wa-mou-shindeiru.mp3",
+        "https://www.myinstants.com/media/sounds/oh-my-god.mp3",
+        "https://www.myinstants.com/media/sounds/broken-glass-1.mp3",
+
+        ];
+
+function playSound(index) {
+  const audio = new Audio(audioSources[index]);
+  audio.play();
+}
+
+for (let i = 0; i < 26; i++) {
+  const button = document.createElement("button");
+  button.textContent = `Button ${i+1}`;
+  button.classList.add("sound-button");
+  button.addEventListener("click", () => playSound(i % audioSources.length));
+  document.body.appendChild(button);
+}
+</script>
+</head>
+<body>
+</body>
+</html>
+
