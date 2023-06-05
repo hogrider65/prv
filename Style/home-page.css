@@ -1,0 +1,170 @@
+/*sfondo*/
+body{
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  margin: 0;
+  z-index: 5;
+}
+#intestazione {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vh;
+    height:0;
+}
+
+@keyframes title-color { /*definisco una variabile di animazione per colorare il bordo del logo*/
+    0% {
+        border-color: #d47d0b;
+    }
+    50% {
+        border-color: #e66909;
+    }
+    100% {
+        border-color: #d47d0b;
+    }
+}
+
+#intestazione img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    border: 5px solid #f97816;
+    border-radius: 80px;
+    animation-name: title-color;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+#intestazione h1 {
+    border-left: 5px solid black;
+    font-size: 45px;
+}
+
+
+/* il pannello laterale */
+.sidepanel {
+    height: 100%; /* indica l altezza */
+    width: 0; /* la larghezza viene cambiata col js */
+    position: fixed; /* fermo */
+    z-index: 1; /* in alto */
+    top: 0;
+    left: 0;
+    background-color: #111; /* sfondo */
+    overflow-x: hidden; /* disabilita lo scorrimento laterale */
+    padding-top: 60px; /* mette un content di 60px in alto */
+    transition: 0.5s; /* 0.5s di transizione di scorrimento del pannello */
+  }
+  
+  /* i link */
+  .sidepanel a {
+    padding: 10px 10px 10px 32px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+  }
+  
+  /* cambi il colore dei link */
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* posizione e stile del pulsante(in alto a sinistra) */
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+
+  /*stile hamburger*/
+  .hamburger {
+    cursor: pointer;
+  }
+  
+  .hamburger input {
+    display: none;
+  }
+  
+  .hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 4em;
+      display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  }
+  
+  .line {
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  
+
+/*section dell pulsant sign-up*/
+#suig{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height:1vh;
+ 
+}
+/*Pulsante signup/login*/
+.sgiu{
+  height:65px;
+  width:95px;
+  background-color: cyan;
+  border:none;
+  border-radius:15px;
+  font-size: 20px;
+  box-shadow:0px 6px 0px 0px rgb(0, 204, 204);
+  cursor:pointer;
+  transition: box-shadow 0.075s;
+}
+.sgiu:active{
+  box-shadow:0px 2px 0px 0px cyan;
+}
+.sgiu:hover{
+  background-color: rgb(0, 236, 236);
+}
+
+/*contatti*/
+
+#ins{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 92vh;
+ flex-direction: column;
+
+}
+#iny{
+  width:50px;
+  height:50px;
+   
+  column-gap: 50px;
+}
+/*easter egg#1*/
+.easter{
+  text-decoration: none;
+  color:black;
+  cursor:default;
+}
+/*tutti gli h1 senza cursore di testo*/
+h1{
+  cursor:default;
+}
